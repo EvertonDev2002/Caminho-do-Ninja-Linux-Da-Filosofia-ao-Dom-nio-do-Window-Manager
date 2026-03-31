@@ -1,6 +1,6 @@
 # Aulas de Linux
 
-Este repositório contém materiais do curso de **Linux de Ponta a Ponta: Da Filosofia ao Window Manager**, organizados em apresentações Markdown utilizando a extensão Marp para VS Code. As aulas cobrem desde conceitos básicos até tópicos avançados de administração e gerenciamento de sistemas.
+Este repositório contém materiais do curso de **Caminho do Ninja Linux: Da Filosofia ao Domínio do Window Manager**, organizados em apresentações Markdown utilizando a extensão Marp para VS Code. As aulas cobrem desde conceitos básicos até tópicos avançados de administração e gerenciamento de sistemas.
 
 ## Conteúdo das Aulas
 
