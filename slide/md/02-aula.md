@@ -2,7 +2,6 @@
 marp: true
 paginate: true
 lang: pt-BR
-# footer: _Linux de Ponta a Ponta: Da Filosofia ao Window Manager_
 
 ---
 ![bg right 80%](../../imgs/02-aula/Logo_Linux_Mint.png)
@@ -80,7 +79,7 @@ Os arquivos ocultos começa com ```.```
 No Linux, vigora um princípio fundamental: "tudo é um arquivo". Isso significa que todo o hardware reconhecido pelo sistema, bem como os dispositivos virtuais, são abstraídos pelo Kernel e representados como arquivos.
 
 ---
-** ```/dev```:**
+**```/dev```:**
 | Dispositivo | Descrição |
 |-------------|-----------|
 | `/dev/sda` | Primeiro disco rígido SATA |

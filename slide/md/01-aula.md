@@ -5,7 +5,7 @@ lang: pt-BR
 
 ---
 ![bg right 80%](../../imgs/01-aula/Heckert_GNU.svg.png)
-![bg 80%](../../imgs//01-aula/Tux.svg.png)
+![bg 80%](../../imgs/01-aula/Tux.svg.png)
 
 # A Jornada do Sistema Operacional e a Filosofia Livre
 
@@ -62,10 +62,13 @@ Quando um programa não tem nada de surpreendente ou de erro a relatar, ele não
 Quando não for possível lidar com um erro de forma elegante e o programa precisar falhar, ele deve falhar ruidosamente e o mais rápido possível para facilitar o diagnóstico
 
 ---
+![bg right 65%](../../imgs/01-aula/Richard-Stallman.jpg)
+
 ## Projeto GNU (GNU is Not Unix)
 Na década de 1980, o Unix já havia se tornado grande e reconhecido, mas sua licença era cara (US$ 20.000 a época) e restritiva. Por conta de tais característica, Richard Stallman, em 1983, criou o projeto GNU com intuito de desenvolver um S.O. completo, livre e que fosse totalmente compatível com o Unix.
 
 ---
+![bg right 65%](../../imgs/01-aula/Linus-Torvalds.jpg)
 ## Kernel Linux
 Linus Torvalds, em 1991, inspirado no MINIX desenvolvida por Andrew Tanenbaum, desenvolveu o próprio kernel, o qual nomeou como Linux. Pouco tempo depois (um ano), Torvalds licenciou (GNU GPL) como software livre, isso permitiu a união com GNU que gerou o GNU/Linux.
 
