@@ -18,78 +18,65 @@ lang: pt-BR
 
 ---
 ## Gerenciamento de Rede
-O gerenciamento de rede no Linux envolve a configuração de interfaces, endereçamento IP, roteamento de pacotes e resolução de nomes utilizando a pilha de protocolos TCP/IP.
+Configuração de interfaces, endereçamento IP, roteamento e DNS via TCP/IP.
 
-**Interfaces de Rede:**
-- eth0 ou enp0s3 para conexões cabeadas (Ethernet).
-
-- wlan0 para redes sem fio (wireless).
-
-- lo para a interface lógica de loopback (localhost)
+**Interfaces:**
+- `eth0`/`enp0s3` - conexões cabeadas (Ethernet)
+- `wlan0` - redes sem fio (wireless)
+- `lo` - loopback (localhost)
 
 ---
-**Configuração Dinâmica e Estática:**
-- Configuração Dinâmica: É temporária e se perde quando o sistema é reiniciado. 
+**Configuração:**
+- **Dinâmica:** Temporária, se perde ao reiniciar
+- **Estática:** Permanente, mantém após reboot
 
-- Configuração Estática: É permanente e se mantém após a reinicialização.
-
-**Resolução de Nomes (DNS):** Para configurar qual servidor DNS o Linux utilizará, edita-se o arquivo `/etc/resolv.conf`.
-**Gerenciamento de Nomes de Máquina (Hostname):** O arquivo `/etc/hosts` é utilizado para mapear endereços IP a nomes de máquinas. Para alterar o nome do próprio servidor dinamicamente para sessão atual usa-se o comando `hostname <novo-nome>`, ou edita-se o arquivo `/etc/hostname` para tornar a alteração estática e permanente.
+**DNS & Hostname:**
+- `/etc/resolv.conf` - configurar servidores DNS
+- `/etc/hostname` - nome da máquina (estático)
+- `hostname <nome>` - altera dinamicamente (sessão)
 
 ---
-## Interfaces Gráficas
-No Linux, a interface gráfica atua como uma camada adicional do sistema operacional que permite ao usuário interagir de forma visual através de um gerenciador de janelas.
+## Interfaces Gráficas (Desktop Environments)
+Camada que permite interação visual com o sistema. Linux funciona independente de servidor gráfico.
 
-Uma característica fundamental do Linux é que ele é totalmente independente de um servidor gráfico para funcionar
+**Ambientes Populares:**
+- **GNOME: minimalista** 
+- **KDE (Plasma): customizável** 
+- **Xfce: leve**
 
-**Ambientes de Desktop:**
-- GNOME: Um dos mais populares, possui foco em usabilidade moderna.
-- KDE (Plasma): Muito conhecido por sua imensa capacidade de customização e ferramentas integradas.
-- Xfce: Um ambiente de desktop leve, ideal para computadores com menos recursos.
+![bg right 20% ](../../imgs/05-aula/Gnomelogo.svg.png)
+![bg right 20% ](../../imgs/05-aula/kde-logo.png)
+![bg right 20% vertical ](../../imgs/05-aula/Xfce_logo.svg.png)
 
 ---
 ## Compositor
-A arquitetura gráfica no Linux passou por uma evolução do tradicional X11 (Xorg) para o protocolo Wayland.
+Evolução de X11 (Xorg) para Wayland.
 
-**Xorg:** No modelo do X11, o servidor X atua como um intermediário constante entre o hardware (kernel), os clientes e o compositor.
-- Entrada: O kernel recebe o evento do dispositivo de entrada e o encaminha ao servidor X via driver evdev.
+**Xorg (X11):** Servidor X intermediário entre hardware, clientes e compositor.
 
-- Distribuição: O servidor X tenta identificar qual janela foi afetada e repassa o evento ao cliente, porém frequentemente desconhece a posição real da janela, pois ela pode ter sido transformada pelo compositor.
+- Fluxo: Hardware → Kernel → Servidor X → Cliente → Renderização → Servidor X → Compositor → Hardware
 
----
-- Requisição: O cliente processa o evento e devolve uma requisição de renderização ao servidor X.
+- Ineficiente: muita redundância e latência
 
-- Evento de Dano: O servidor X processa a requisição, calcula a região alterada e notifica o compositor com um evento de dano.
-
-- Composição e Exibição: O compositor recompõe a tela inteira e devolve a imagem ao servidor X, que por fim a copia para o hardware, processo redundante e ineficiente.
+![bg right 90% ](../../imgs/05-aula/x-architecture-1.png)
 
 ---
-**Wayland:** O Wayland foi criado para substituir a arquitetura e o protocolo do X11, tornando o sistema mais fácil de desenvolver e manter. O compositor é o próprio servidor de exibição.
+**Wayland:** Compositor é o próprio servidor de exibição.
+- Fluxo: Hardware → Kernel → Compositor → Cliente → Buffer compartilhado → Exibição
 
-- Entrada Direta: O kernel capta o evento de hardware e o repassa imediatamente ao compositor Wayland.
+- Eficiente: entrada direta, mapeamento exato, renderização direta
 
-- Mapeamento Exato: O compositor, por controlar todo o grafo de cena e as transformações visuais, sabe precisamente para qual cliente enviar o evento e converte as coordenadas da tela para as coordenadas locais da janela.
+- Compositor controla todo grafo de cena e transformações visuais
 
-- Renderização Direta: Ao contrário do X11, o cliente renderiza sua interface diretamente em um buffer de memória compartilhado com o compositor, usando bibliotecas como OpenGL/EGL.
-
----
-
-- Composição: Após atualizar o buffer, o cliente notifica o compositor apenas sobre a área modificada por meio de uma requisição de dano
-
-- Exibição: O compositor reúne as requisições, recompõe a tela via EGL/GLES2 ou hardware (overlays) e envia a imagem final ao kernel via KMS para exibição.
-
+![bg right 90% ](../../imgs/05-aula/wayland-architecture-1.png)
 ---
 ## Windows Manager
-Os Gerenciadores de Janelas (WMs) são softwares responsáveis por controlar posicionamento, aparência e comportamento das janelas, incluindo bordas, barras de título e redimensionamento.
+Software responsável por controlar posicionamento, aparência e comportamento das janelas.
 
-**Windows Manager:**
-- Stacking (ou Floating): Oferecem a metáfora tradicional de "papéis em uma mesa", onde as janelas flutuam e podem se sobrepor umas às outras (como no Windows e macOS).
-
-- Tiling: Organiza as janelas lado a lado em um formato de "mosaico" ou "azulejo", garantindo que não haja sobreposição.
-
-- Dynamic: Permite alternar de forma dinâmica entre os esquemas em tiling e flutuante.
-
-
+**Tipos:**
+- **Stacking (Floating):** Janelas flutuam e se sobrepõem (como Windows/macOS)
+- **Tiling:** Organiza lado a lado em "mosaico", sem sobreposição
+- **Dynamic:** Alterna dinamicamente entre tiling e flutuante
 ---
 ## Comandos úteis
 
@@ -106,6 +93,19 @@ Os Gerenciadores de Janelas (WMs) são softwares responsáveis por controlar pos
 |-----------|-----------|
 | `uptime` | Exibe tempo de atividade do sistema |
 | `pinky` | Exibe informações sobre usuários logados |
+---
+![bg left:35%](../../imgs/common/nana-question.png)
+**Tarefa: Validar a configuração de rede via CLI e identificar o compositor em uso**
+- Use ip addr para identificar sua interface de rede e ping -c 4 8.8.8.8 para testar a latência.
+
+- Altere o seu Hostname temporariamente com o comando hostname e verifique a mudança no arquivo /etc/hostname.
+
+---
+![bg left:35%](../../imgs/common/nana-question.png)
+
+- Descubra se sua sessão atual roda sobre X11 ou Wayland executando echo $XDG_SESSION_TYPE no terminal.
+
+- Configure em `/etc/NetworkManager/conf.d` DNS globalmente.
 
 ---
 ## Referencias
@@ -121,4 +121,4 @@ Os Gerenciadores de Janelas (WMs) são softwares responsáveis por controlar pos
 ---
 <!-- _paginate: skip -->
 
-![bg fit ](../../imgs/fim.png)
+![bg fit ](../../imgs/common/fim.png)

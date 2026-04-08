@@ -25,40 +25,28 @@ Ele opera de duas maneiras:
 - como um interpretador de comandos
 - como linguagem de programação
 
-**Bash:**
-Bash é o shell padrão na maioria dos S.O. GNU/Linux. O seu nome é um acrônimo para "Bourne Again SHell", que é um trocadilho com o nome de Stephen Bourne, o autor do antecessor direto do atual shell `sh` (Bourne Shell) do Unix.
+**Bash**: Shell padrão em GNU/Linux. Acrônimo para "Bourne Again SHell" - trocadilho com Stephen Bourne, autor do `sh`
 
 ---
-## Pipe e Fluxo Padrão de I/O (stdin, stdout, stder)
+## Pipe e Fluxo Padrão de I/O
+**Fluxos Padrão:**
+- **stdin (0):** Entrada padrão do teclado
+- **stdout (1):** Saída padrão de resultados
+- **stderr (2):** Saída de erros
 
-**Fluxo Padrão de I/O:**
-Em sistemas baseados em Unix, a comunicação de dados com os programas é feita através de fluxos padrão, identificados por números chamados descritores de arquivo.
-- **Standard Input (stdin):** É a entrada padrão, associada ao descritor de arquivo 0. Ele lê os dados diretamente do terminal, mas pode ser redirecionada para ler o conteúdo de um arquivo utilizando o operador `<`.
-
-- **Standard Output (stdout):** É a saída padrão, associada ao descritor de arquivo 1. Ele imprimir os resultados de um comando. Pode ser redirecionada para gravar dados num arquivo usando o operador `>` ou `>>`.
-
----
-- **Standard Error (stderr):** É a saída de erro padrão, associada ao descritor de arquivo 2. Utilizada especificamente para exibir mensagens de aviso e erros na tela. Pode ser redirecionada para um arquivo isoladamente usando `2>` ou `2>&1` para fundir a saída padrão com a saída de erros.
-
-**Pipe:**
-Um pipe é um mecanismo para comunicação entre comandos, representado no shell pelo operador de barra vertical `|`. Ele conecta diretamente a saída padrão (stdout) de um comando à entrada padrão (stdin) do comando seguinte.
-
+**Pipe (`|`):** Conecta stdout de um comando ao stdin do próximo
+- Ex: `comando1 | comando2`
 
 ---
 ## Redirecionamento
-**Redirecionamento:**
-- `>` (Redirecionamento de Saída): Direciona a saída padrão (stdout) para um arquivo. Se o arquivo não existir, ele será criado; se já existir, o conteúdo anterior é sobrescrito.
-
-- `>>` (Anexar Saída): Assim como o `>`, redireciona a saída para um arquivo, criando-o se não existir. Contudo, se o arquivo já existir, os dados serão anexados ao final dele.
-
-- `<` (Redirecionamento de Entrada): Faz com que o comando leia os dados a partir de um arquivo em vez do teclado (stdin).
-
----
-- `&>` ou `>&` (Saída Padrão e de Erro): Direciona simultaneamente a saída padrão (stdout) e a saída de erro (stderr) para o mesmo arquivo. É o equivalente semântico da notação `>` arquivo `2>&1`.
-
-- `<<`(Here Document): Orienta o shell a ler a entrada a partir da fonte atual até que encontre uma palavra ou caractere delimitador (sem espaços) fornecido pelo usuário, processando todo o bloco de texto como entrada.
-
-- `<<<` (Here String): Uma variação do anterior, passa uma única string expandida pelo shell como entrada padrão para o comando.
+**Operadores:**
+- `>` - Sobrescreve arquivo
+- `>>` - Anexa ao arquivo
+- `<` - Lê de arquivo
+- `2>` - Redireciona stderr
+- `&>` - Redireciona stdout e stderr
+- `<<` - Here Document
+- `<<<` - Here String
 
 ---
 ## Gerenciamento de Arquivo
@@ -125,6 +113,20 @@ O gerenciador de pacotes é o software encarregado de instalar, atualizar e remo
 | `wget` | Baixa arquivos da web |
 | `curl` | Transfere dados de ou para um servidor |
 | `nano` | Editor de texto simples |
+---
+![bg left:35%](../../imgs/common/nana-question.png)
+
+**Tarefa: Criar um "pipeline" de processamento de logs**
+- Liste os arquivos de `/usr/bin` e direcione a saída para um arquivo chamado comandos.txt usando o operador `>`.
+
+- Use o `grep` para filtrar apenas comandos que contenham a palavra "zip" dentro desse arquivo e anexe o resultado em um arquivo filtrados.log usando `>>`.
+
+---
+![bg left:35%](../../imgs/common/nana-question.png)
+
+- Tente listar um diretório que não existe e redirecione o erro (stderr) para um arquivo erros.log usando `2>`.
+
+- Combine `cat`, `grep` e `wc -l` usando Pipes (|) para contar quantas linhas do log possuem a palavra "error".
 
 ---
 ## Referencias
@@ -139,4 +141,4 @@ O gerenciador de pacotes é o software encarregado de instalar, atualizar e remo
 ---
 <!-- _paginate: skip -->
 
-![bg fit ](../../imgs/fim.png)
+![bg fit ](../../imgs/common/fim.png)

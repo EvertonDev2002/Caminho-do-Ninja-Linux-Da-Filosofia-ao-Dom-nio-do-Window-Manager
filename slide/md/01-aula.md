@@ -4,6 +4,10 @@ paginate: true
 lang: pt-BR
 
 ---
+<!--
+_color: Black
+-->
+
 ![bg right 80%](../../imgs/01-aula/Heckert_GNU.svg.png)
 ![bg 80%](../../imgs/01-aula/Tux.svg.png)
 
@@ -20,92 +24,101 @@ lang: pt-BR
 ---
 ## História e Fundamentos
 
-O Unix surgiu como contraponto ao sistema operacional (S.O) MULTICS em 1969, pela equipe de pesquisadores Bell Labs (Ken Thompson, Dennis Ritchie, Doug McIlroy e Joe Ossanna). Originalmente foi batizado como UNICS (um trocadilho com MULTICS) por Brian Kernighan. Sua primeira versão era escrito em assembly, mais tarde, em 1973, o Unix foi reescrito na linguagem C.
+![bg 85%](../../imgs/01-aula/Ken_Thompson,_2019.jpg)
+![bg right 85%](../../imgs/01-aula/Dennis_Ritchie_2011.jpg)
 
----
-**Resumo:**
-- O UNIX surgiu em 1960 escrito em assembly
-- No ano de 1973 foi reescrito em C
-  - uma revolução para época
-  - tornou desenvolvimento de S.O mais simples
-  - S.O tornou mais portável
+
+
+- **1969:** Unix criado no Bell Labs (Ken Thompson, Dennis Ritchie)
+- **1973:** Reescrito em C (portável e revolucionário)
+- **1970s:** Licenciado para universidades (variantes BSD)
 
 ---
 ## Filosofia Unix
-Durante a década de 1970, a AT&T licenciou os códigos-fonte do Unix para universidades e institutos de pesquisa, o que gerou diversas variantes e um enorme crescimento do sistema, com destaque para a versão BSD (Berkeley Software Distribution), desenvolvida na Universidade da Califórnia.
+
+"Escreva programas que façam apenas uma coisa e a façam bem", Doug McIlroy
+
+**Principais regras (são 17 regras ao todo):**
+- Modularidade: partes simples com interfaces limpas
+- Clareza: código legível é melhor que complexo
+- Composição: programas conectados entre si
+- Simplicidade: apenas complexidade necessária
+- Silêncio: programa não reclama se tudo está bem
 
 ---
-**Princípios Filosofia Unix:**
-No total são 17 regras, mas veremos somente algumas.
-- **Regra da Modularidade:**
-screva partes simples conectadas por interfaces limpas. Manter a complexidade baixa em módulos separados garante que problemas sejam locais, permitindo atualizar uma peça sem quebrar o todo
-
-- **Regra da Clareza:**
-A clareza do código é melhor do que a inteligência exagerada. Como a manutenção é custosa, o código deve ser legível para o desenvolvedor que o manterá no futuro, e não apenas para a máquina.
-
---- 
-- **Regra da Composição:**
-Projete programas para estarem conectados com outros. Os programas devem preferencialmente aceitar e emitir fluxos de texto simples para facilitar essa integração.
-- **Regra da Separação:**
-Separe a política do mecanismo e separe as interfaces das engines (o frontend implementa a política, e o backend, o mecanismo).
+![bg 85%](../../imgs/01-aula/unix-52-year-old-v4.png)
 
 ---
-- **Regra da Simplicidade:**
-Projete visando a simplicidade e adicione complexidade apenas quando for estritamente necessário, resistindo ao inchaço do software.
-- **Regra da Parcimônia:**
-Escreva programas grandes apenas quando puder ser demonstrado claramente que nenhuma outra abordagem menor servirá
+![bg  65%](../../imgs/01-aula/utah_unix_v4_tape_in_reader.jpg)
+
+![bg  85%](../../imgs/01-aula/fita-do-unix.jpg)
 
 ---
-- **Regra do Silêncio:**
-Quando um programa não tem nada de surpreendente ou de erro a relatar, ele não deve dizer nada. A saída de um programa precisa poder virar facilmente a entrada de outro.
-- **Regra do Reparo:**
-Quando não for possível lidar com um erro de forma elegante e o programa precisar falhar, ele deve falhar ruidosamente e o mais rápido possível para facilitar o diagnóstico
-
----
-![bg right 65%](../../imgs/01-aula/Richard-Stallman.jpg)
 
 ## Projeto GNU (GNU is Not Unix)
-Na década de 1980, o Unix já havia se tornado grande e reconhecido, mas sua licença era cara (US$ 20.000 a época) e restritiva. Por conta de tais característica, Richard Stallman, em 1983, criou o projeto GNU com intuito de desenvolver um S.O. completo, livre e que fosse totalmente compatível com o Unix.
+
+![bg right 65%](../../imgs/01-aula/Richard-Stallman.jpg)
+
+- **1983:** Richard Stallman cria o GNU
+- Objetivo: S.O. livre e compatível com Unix
+- Unix original era caro (US$ 20.000) e restritivo
 
 ---
-![bg right 65%](../../imgs/01-aula/Linus-Torvalds.jpg)
 ## Kernel Linux
-Linus Torvalds, em 1991, inspirado no MINIX desenvolvida por Andrew Tanenbaum, desenvolveu o próprio kernel, o qual nomeou como Linux. Pouco tempo depois (um ano), Torvalds licenciou (GNU GPL) como software livre, isso permitiu a união com GNU que gerou o GNU/Linux.
+
+![bg right 65%](../../imgs/01-aula/Linus-Torvalds.jpg)
+
+- **1991:** Linus Torvalds desenvolve o kernel Linux
+- Inspirado no MINIX
+- **1992:** Licenciado sob GNU GPL (software livre)
+- Possibilitou a união com GNU → **GNU/Linux**
 
 ---
 ![bg 85%](../../imgs/01-aula/linha-do-tempo-unix-ao-linux.png)
 
 --- 
-## Filosofia Open Source (código aberto)
-Software de código aberto é um código desenvolvido para ser acessível ao público: qualquer pessoa pode ver, modificar e distribuir o código da maneira que achar melhor.
+## Filosofia Open Source
 
-**Princípios:**
+Código acessível: qualquer pessoa pode ver, modificar e distribuir.
+
+**Princípios:** 
 - Revisão por pares
-- Transparência
-- Confiabilidade
-- Flexibilidade
-- Colaboração aberta
+- transparência
+- confiabilidade
+- flexibilidade
+- colaboração.
 
 ---
-## Filosofia free software (Software livre)
-O software livre é aquele que respeita a liberdade e o senso de comunidade dos usuários, garantindo o direito de executar, copiar, distribuir, estudar, mudar e melhorar o programa.
+## Filosofia Free Software
+
+Software que respeita a liberdade e comunidade dos usuários.
+
+**As 4 Liberdades Essenciais:**
+1. Executar para qualquer propósito
+2. Estudar e adaptar às suas necessidades
+3. Redistribuir cópias
+4. Distribuir versões modificadas
 
 ---
-**As quatro liberdades essenciais:**
-- liberdade 0: A liberdade de executar o programa como você desejar, para qualquer propósito.
-- liberdade 1: A liberdade de estudar como o programa funciona, e adaptá-lo às suas necessidades.
-- liberdade 2: A liberdade de redistribuir cópias de modo que você possa ajudar outros
-- liberdade 3: A liberdade de distribuir cópias de suas versões modificadas a outros.
+![bg 85%](../../imgs/01-aula/xz-1-cve-2024-3094.png.png)
+
+---
+![bg 85%](../../imgs/01-aula/xz-2-cve-2024-3094.png.png)
 
 ---
 ## GNU/Linux
+![bg right 60%](../../imgs/01-aula/Unix-history.jpg)
+
 Ao juntar os utilitários, bibliotecas e a interface em modo texto (shell) do projeto GNU com o kernel Linux que gerencia a máquina, obteve-se o sistema operacional plenamente funcional conhecido como GNU/Linux
 
 ---
 ## Distribuição Linux
-Uma Distribuição Linux (distro) é um sistema operacional completo criado a partir de um conjunto de softwares que operam em conjunto com o núcleo (kernel) Linux, utilitários e bibliotecas (GNU), gerenciador de pacotes e repositórios.
 
-As distros mais antigas ainda ativas são o Slackware (1993) e o Debian (1993), este último é base para grandes S.O. populares, como Ubuntu e Linux Mint.
+Distro = Kernel Linux + GNU utilities + gerenciador de pacotes
+
+**Distros bases mais antigas:**
+- Slackware (1993)
+- Debian (1993) → base para Ubuntu, Linux Mint
 
 ---
 ## Comandos úteis
@@ -114,6 +127,20 @@ As distros mais antigas ainda ativas são o Slackware (1993) e o Debian (1993), 
 |-----------|-----------|
 | `uname` | Exibe informações do Kernel e sistema operacional |
 | `cat /etc/os-release` | Para verificar qual distribuição está rodando e sua base |
+
+---
+![bg left:35%](../../imgs/common/nana-question.png)
+
+**Tarefa: Identifique a linhagem da sua distribuição**
+   - Execute `uname -a` e `cat /etc/os-release`.
+
+   - Identifique: kernel, distribuição, versão, arquitetura.
+
+   - Pesquise qual distribuição está usando e sua base (Debian, RHEL, Arch, etc).
+
+   - Crie um script simples que liste essas informações.
+
+   - Crie um pequeno relatório em texto puro listando três ferramentas do Projeto GNU.
 
 ---
 ## Referencias
@@ -127,8 +154,9 @@ Introdução ao Sistema UNIX](https://www.lsi.usp.br/~volnys/courses/linux/pdf-c
 - [The Art of Unix Programming](http://www.catb.org/esr/writings/taoup/html/)
 - [Guia Pratico do servidor Linux ](https://www.casadocodigo.com.br/products/livro-admin-linux)
 - [What is open source?](https://www.redhat.com/en/topics/open-source/what-is-open-source)
+- [Commit da remoção do Backdoor | XZ](https://codeberg.org/tukaani/xz/commit/e93e13c8b3bec925c56e0c0b675d8000a0f7f754)
 
 ---
 <!-- _paginate: skip -->
 
-![bg fit ](../../imgs/fim.png)
+![bg fit ](../../imgs/common/fim.png)
