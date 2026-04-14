@@ -64,9 +64,12 @@ _color: Black
 - Unix original era caro (US$ 20.000) e restritivo
 
 ---
+![bg  95%](../../imgs/01-aula/gnu-software-livre.png)
+
+---
 ## Kernel Linux
 
-![bg right 65%](../../imgs/01-aula/Linus-Torvalds.jpg)
+![bg right 60%](../../imgs/01-aula/Linus-Torvalds.jpg)
 
 - **1991:** Linus Torvalds desenvolve o kernel Linux
 - Inspirado no MINIX
@@ -74,9 +77,7 @@ _color: Black
 - Possibilitou a união com GNU → **GNU/Linux**
 
 ---
-![bg 85%](../../imgs/01-aula/linha-do-tempo-unix-ao-linux.png)
 
---- 
 ## Filosofia Open Source
 
 Código acessível: qualquer pessoa pode ver, modificar e distribuir.
@@ -121,6 +122,7 @@ Distro = Kernel Linux + GNU utilities + gerenciador de pacotes
 - Debian (1993) → base para Ubuntu, Linux Mint
 
 ---
+
 ## Comandos úteis
 
 | Comando | Descrição |

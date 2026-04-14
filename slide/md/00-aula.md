@@ -10,8 +10,7 @@ _color: Black
 
 ![bg left 95%](../../imgs/00-aula/clube-do-bolinha.png)
 
-# O clube do bolinha
-
+# O clube do bolinha é a fortaleza da solidão...
 ---
 ## Cronograma de Aulas:
 | Data | Conteúdo |
@@ -43,7 +42,6 @@ _color: Black
 | - |  Gerenciamento de Arquivo |
 | - |  Gerenciamento de pacotes |
 
-
 ---
 
 | Data | Conteúdo |
@@ -64,4 +62,49 @@ _color: Black
 | - | Windows Manager (i3, SWAY, River, niro) |
 
 ---
+## Aula dada, aula estudada...
 
+![bg right 65%](../../imgs/00-aula/pierluigi-piazzi.jpg)
+
+---
+## Nana, o companheiro!
+- Responsável em passar as atividades do curso. 
+- Caraterísticas: carismático, meigo e bastante observador.
+![bg right 75%](../../imgs/00-aula/nana.png)
+
+___
+### Reflexão: a origem todos dos males - a avareza (questão 84, artigo I)
+![bg right 75%](../../imgs/00-aula/loyola.webp)
+- **A origem dos males:** A avareza como "nutriente" para os outros pecados.
+
+- **O conceito na Suma Teológica:** O apetite imoderado pela riqueza.
+
+- **A diferença vital:** A riqueza em si não é o mal; o problema é a cegueira do exagero
+
+---
+## Um exemplo trágico: De quanta terra precisa um homem?
+
+![bg right 55%](../../imgs/00-aula/De-quanta-terra-um-Homem-precisa-de-Liev-Tolstói.jpg)
+
+O Custo Real: A Perda da Liberdade
+- A busca desenfreada por bens materiais exige um sacrifício.
+
+- Perde-se a própria liberdade e suprime-se a liberdade alheia.
+
+- Prioridade do bem individual em detrimento do bem comum.
+
+- O ciclo repetitivo
+
+---
+
+![bg 70%](../../imgs/00-aula/ensh*ttificador.png)
+
+---
+## Você possui o controle!
+Nada é mais fundamental do que a liberdade.
+![bg right:60%](../../imgs/00-aula/monkey_d__luffy_gear_5_nika1.png)
+
+---
+É isso...
+Próximo slide.
+![bg right:70%](../../imgs/00-aula/greed.png)
